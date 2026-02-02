@@ -1,0 +1,11 @@
+services: 
+  webui:
+    build:
+      context: .
+      dockerfile: Dockerfile # or Dockerfile-dev for development
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    ports:
+      - "4200:4200" # Angular default port for development
+      - "4202:80" # Nginx port for production
